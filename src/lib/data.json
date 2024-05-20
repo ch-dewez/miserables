@@ -1,0 +1,46 @@
+[
+  {
+    "0": {
+      "text": "Premier texte",
+      "option1": "option1",
+      "option2": "option2",
+      "image": "image.png"
+    }
+  },
+  {
+    "0": {
+      "text": "pth 0",
+      "option1": "option1",
+      "option2": "option2",
+      "image": "image.png"
+    },
+    "1": {
+      "text": "path 1",
+      "option1": "option1",
+      "option2": "option2",
+      "image": "image.png"
+    }
+  },
+  {
+    "0": {
+      "text": "Jean ",
+      "option1": "1",
+      "option2": "2",
+      "image": "image.png"
+    },
+    "2": {
+      "text": "path 2",
+      "option1": "option1",
+      "option2": "option2",
+      "image": "image.png"
+    }
+  },
+  {
+    "2": {
+      "text": "skjlhdfg",
+      "option1": "sdfg",
+      "option2": "qsdf",
+      "image": "image.png"
+    }
+  }
+]
