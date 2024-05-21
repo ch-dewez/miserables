@@ -1,11 +1,4 @@
 import { readFileSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const currentDir = dirname(fileURLToPath(import.meta.url));
-const dataFilePath = join(currentDir, '..', 'lib', 'data.json');
-
-
 export const actions = {
     add: async ({ request }) => {
         const data = await request.formData();
@@ -19,7 +12,7 @@ export const actions = {
         // TODO add to json file
 
         // Read existing data from JSON file
-        let jsonData = readFileSync(dataFilePath, 'utf8');
+        let jsonData = readFileSync("$lib/data.json", 'utf8');
         let dataArray;
         if (jsonData) {
             dataArray = JSON.parse(jsonData);
@@ -39,14 +32,7 @@ export const actions = {
 
 
         // Write the updated data back to the JSON file
-        writeFileSync(dataFilePath, JSON.stringify(dataArray, null, 2));
+        writeFileSync("$lib/data.json", JSON.stringify(dataArray, null, 2));
     },
 
 }
-
-export async function load(  ) {
-    let jsonData = readFileSync(dataFilePath, 'utf8');
-    let dataArray = await JSON.parse(jsonData);
-    // Return the data as JSON
-    return {dataArray}
-};

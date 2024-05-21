@@ -1,34 +1,29 @@
 <script>
     import { goto } from "$app/navigation";
-    import {onMount} from 'svelte'
-
-    export let data
-    
-    let {dataArray} = data
-
+    import jsonData from "$lib/data.json"
     
     let questionNb = 0
     let path = 0
     
     // automatically assign text imagesrc and options
     
-    let currentText = dataArray[questionNb][path].text
-    let currentOptions = [dataArray[questionNb][path].option1, dataArray[questionNb][path].option2]
-    let imageSrc = "images/" + dataArray[questionNb][path].image
+    let currentText = jsonData[questionNb][path].text
+    let currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
+    let imageSrc = "images/" + jsonData[questionNb][path].image
     
         
 
     function initVariables() {
-        currentText = dataArray[questionNb][path].text
-        currentOptions = [dataArray[questionNb][path].option1, dataArray[questionNb][path].option2]
-        imageSrc = "images/" + dataArray[questionNb][path].image
+        currentText = jsonData[questionNb][path].text
+        currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
+        imageSrc = "images/" + jsonData[questionNb][path].image
     }
 
     function onClick(answerIdx) {
-        console.log(questionNb+1, dataArray.length, path, !dataArray[questionNb]?.hasOwnProperty(path))
+        console.log(questionNb+1, jsonData.length, path, !jsonData[questionNb]?.hasOwnProperty(path))
         path += answerIdx * (2 ** questionNb)
         questionNb += 1
-        if (questionNb >= dataArray.length || !dataArray[questionNb]?.hasOwnProperty(path)) {
+        if (questionNb >= jsonData.length || !jsonData[questionNb]?.hasOwnProperty(path)) {
             goto(`add/${questionNb}/${path}`)
         }
         initVariables()
