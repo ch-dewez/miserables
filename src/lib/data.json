@@ -4,7 +4,7 @@
       "text": "Premier texte",
       "option1": "option1",
       "option2": "option2",
-      "image": "image.png"
+      "image": "jeanvaljean.jpg"
     }
   },
   {
@@ -12,13 +12,13 @@
       "text": "pth 0",
       "option1": "option1",
       "option2": "option2",
-      "image": "image.png"
+      "image": "jeanvaljean.jpg"
     },
     "1": {
       "text": "path 1",
       "option1": "option1",
       "option2": "option2",
-      "image": "image.png"
+      "image": "jeanvaljean.jpg"
     }
   },
   {
@@ -26,13 +26,13 @@
       "text": "Jean ",
       "option1": "1",
       "option2": "2",
-      "image": "image.png"
+      "image": "jeanvaljean.jpg"
     },
     "2": {
       "text": "path 2",
       "option1": "option1",
       "option2": "option2",
-      "image": "image.png"
+      "image": "jeanvaljean.jpg"
     }
   },
   {
