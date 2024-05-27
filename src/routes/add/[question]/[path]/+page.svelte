@@ -5,6 +5,9 @@
     let path = data.path
 
     let options = ["", ""]
+
+    let isEnd
+    let hasRedirection
 </script>
 
 <form method="POST" action="/?/add">
@@ -34,6 +37,27 @@
                 <input type="text" name="option {i+1}">
             </div>
         {/each}
+
+        <div>
+            <p>is End</p>
+            <input type="checkbox" name="isEnd" bind:value={isEnd}>
+        </div>
+        
+        {#if !isEnd}
+            <div>
+                <p>has redirection </p>
+                <input type="checkbox" name="isEnd" bind:value={hasRedirection}>
+            </div>
+        {#if hasRedirection}
+
+            {#each options as option, i}
+                <div>
+                    <p>redirection {i+1}</p>
+                    <input type="text" name="redirection {i+1}">
+                </div>
+            {/each}
+        {/if}
+
         <div>
             <button>Submit</button>
         </div>

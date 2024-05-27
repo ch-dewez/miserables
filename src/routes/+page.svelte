@@ -1,28 +1,52 @@
 <script>
     import { goto } from "$app/navigation";
     import jsonData from "$lib/data.json"
-    
+
+
     let questionNb = 0
     let path = 0
     
-    // automatically assign text imagesrc and options
-    
-    let currentText = jsonData[questionNb][path].text
-    let currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
-    let imageSrc = "images/" + jsonData[questionNb][path].image
+    // automatically assign text imagesrc and option
+    let currentText
+    let hasOptions
+    let isEnd
+    let currentOptions = ["", ""]
+    let imageSrc
+    let hasRedirection
+    let redirection
     
         
+    onMount(() => {
+        initVariables()
+    })
 
     function initVariables() {
         currentText = jsonData[questionNb][path].text
-        currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
+        hasOptions = jsonData[questionNb][path].hasOptions
+        isEnd = jsonData[questionNb][path].isEnd
+        if (hasOptions){
+            currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
+        }
+
         imageSrc = "images/" + jsonData[questionNb][path].image
+
+        hasRedirection = jsonData[questionNb][path].hasRedirection
+        redirection = jsonData[questionNb][path].redirection
     }
 
     function onClick(answerIdx) {
-        console.log(questionNb+1, jsonData.length, path, !jsonData[questionNb]?.hasOwnProperty(path))
-        path += answerIdx * (2 ** questionNb)
-        questionNb += 1
+        if (isEnd) {
+            
+        }
+
+        if (hasRedirection){
+            questionNb = redirection[0]
+            redirection = redirection[1]
+        }else {
+            path += answerIdx * (2 ** questionNb)
+            questionNb += 1
+        }
+
         if (questionNb >= jsonData.length || !jsonData[questionNb]?.hasOwnProperty(path)) {
             goto(`add/${questionNb}/${path}`)
         }
@@ -37,10 +61,12 @@
     <div class="speech">
         <h5>{currentText}</h5>
     </div>
+    {#if hasOptions}
     <div class=answers>
         <button class="underline" on:click={() => onClick(0)}>{currentOptions[0]}</button>
         <button class="underline" on:click={() => onClick(1)}>{currentOptions[1]}</button>
     </div>
+    {/if}
 </div>
 
 

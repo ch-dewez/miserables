@@ -8,6 +8,9 @@ export const actions = {
         let option1 = data.get('option 1');
         let option2 = data.get('option 2');
         let image = data.get('image');
+        let isEnd = data.get("isEnd")
+        let hasRedirection = data.get("hasRedirection")
+        let redirection = data.get("redirection")
     
         // TODO add to json file
 
@@ -28,7 +31,7 @@ export const actions = {
         }
 
 
-        dataArray[parseInt(question)] = Object.assign({[path]:{text, option1, option2, image}}, dataArray[parseInt(question)])
+        dataArray[parseInt(question)] = Object.assign({[path]:{text, option1, option2, image, isEnd, hasRedirection, redirection}}, dataArray[parseInt(question)])
 
 
         // Write the updated data back to the JSON file
