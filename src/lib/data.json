@@ -1,3 +1,54 @@
 [
-  
+  {
+    "0": {
+      "text": "Premier texte",
+      "hasOptions": true,
+      "option1": "redirection",
+      "option2": "no Option",
+      "image": "jeanvaljean.jpg"
+    }
+  },
+  {
+    "0": {
+      "text": "redirection",
+      "option1": "option 1",
+      "option2": "option2",
+      "image": "jeanvaljean.jpg",
+      "isEnd": null,
+      "hasOptions": null,
+      "hasRedirection": "on",
+      "redirections": [
+        "0",
+        "0"
+      ]
+    },
+    "1": {
+      "text": "no option",
+      "option1": "",
+      "option2": "",
+      "image": "jeanvaljean.jpg",
+      "isEnd": null,
+      "hasOptions": null,
+      "hasRedirection": null,
+      "redirections": [
+        null,
+        null
+      ]
+    }
+  },
+  {
+    "1": {
+      "text": "end",
+      "option1": "",
+      "option2": "",
+      "image": "jeanvaljean.jpg",
+      "isEnd": "on",
+      "hasOptions": null,
+      "hasRedirection": null,
+      "redirections": [
+        null,
+        null
+      ]
+    }
+  }
 ]

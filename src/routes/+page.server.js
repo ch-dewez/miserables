@@ -9,13 +9,17 @@ export const actions = {
         let option2 = data.get('option 2');
         let image = data.get('image');
         let isEnd = data.get("isEnd")
+        let hasOptions = data.get("hasOptions")
         let hasRedirection = data.get("hasRedirection")
-        let redirection = data.get("redirection")
+        let redirection1 = data.get("redirection 1")
+        let redirection2 = data.get("redirection 2")
+
+        console.log(isEnd, hasRedirection, redirection1, redirection2)
     
         // TODO add to json file
 
         // Read existing data from JSON file
-        let jsonData = readFileSync("$lib/data.json", 'utf8');
+        let jsonData = readFileSync("src/lib/data.json", 'utf8');
         let dataArray;
         if (jsonData) {
             dataArray = JSON.parse(jsonData);
@@ -31,11 +35,11 @@ export const actions = {
         }
 
 
-        dataArray[parseInt(question)] = Object.assign({[path]:{text, option1, option2, image, isEnd, hasRedirection, redirection}}, dataArray[parseInt(question)])
+        dataArray[parseInt(question)] = Object.assign({[path]:{text, option1, option2, image, isEnd, hasOptions, hasRedirection, redirections:[redirection1, redirection2]}}, dataArray[parseInt(question)])
 
 
         // Write the updated data back to the JSON file
-        writeFileSync("$lib/data.json", JSON.stringify(dataArray, null, 2));
+        writeFileSync("src/lib/data.json", JSON.stringify(dataArray, null, 2));
     },
 
 }

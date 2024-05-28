@@ -2,46 +2,22 @@
     import { goto } from "$app/navigation";
     import jsonData from "$lib/data.json"
 
-
     let questionNb = 0
     let path = 0
     
-    // automatically assign text imagesrc and option
-    let currentText
-    let hasOptions
-    let isEnd
-    let currentOptions = ["", ""]
-    let imageSrc
-    let hasRedirection
-    let redirection
-    
-        
-    onMount(() => {
-        initVariables()
-    })
+    $: currentData = jsonData[questionNb][path] 
 
-    function initVariables() {
-        currentText = jsonData[questionNb][path].text
-        hasOptions = jsonData[questionNb][path].hasOptions
-        isEnd = jsonData[questionNb][path].isEnd
-        if (hasOptions){
-            currentOptions = [jsonData[questionNb][path].option1, jsonData[questionNb][path].option2]
-        }
-
-        imageSrc = "images/" + jsonData[questionNb][path].image
-
-        hasRedirection = jsonData[questionNb][path].hasRedirection
-        redirection = jsonData[questionNb][path].redirection
-    }
 
     function onClick(answerIdx) {
-        if (isEnd) {
-            
+        if (currentData.isEnd) {
+            goto("/end")
+            return
         }
 
-        if (hasRedirection){
-            questionNb = redirection[0]
-            redirection = redirection[1]
+        if (currentData.hasRedirection){
+            questionNb = parseInt(currentData.redirections[0])
+            path = parseInt(currentData.redirections[1])
+            return
         }else {
             path += answerIdx * (2 ** questionNb)
             questionNb += 1
@@ -54,18 +30,21 @@
     }
 </script>
 
-<!-- <enhanced:img src={images[imageIndex]} alt="" /> -->
 <!-- svelte-ignore a11y-img-redundant-alt -->
-<img src="{imageSrc}" alt="Description of the image">
+<img src="images/{currentData.image}" alt="Description of the image">
 <div class="container">
     <div class="speech">
-        <h5>{currentText}</h5>
+        <h5>{currentData.text}</h5>
     </div>
-    {#if hasOptions}
-    <div class=answers>
-        <button class="underline" on:click={() => onClick(0)}>{currentOptions[0]}</button>
-        <button class="underline" on:click={() => onClick(1)}>{currentOptions[1]}</button>
-    </div>
+    {#if currentData.hasOptions}
+        <div class=answers>
+            <button class="underline" on:click={() => onClick(0)}>{currentData.option1}</button>
+            <button class="underline" on:click={() => onClick(1)}>{currentData.option2}</button>
+        </div>
+    {:else}
+        <div class="answers">
+            <button class="underline" on:click={() => onClick(0)}>continuer</button>
+        </div>
     {/if}
 </div>
 

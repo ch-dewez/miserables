@@ -6,8 +6,9 @@
 
     let options = ["", ""]
 
-    let isEnd
-    let hasRedirection
+    let isEnd = false
+    let hasRedirection = false
+    let redirections = ["", ""]
 </script>
 
 <form method="POST" action="/?/add">
@@ -40,17 +41,25 @@
 
         <div>
             <p>is End</p>
-            <input type="checkbox" name="isEnd" bind:value={isEnd}>
+            <input type="checkbox" name="isEnd" bind:checked={isEnd}>
+        </div>
+
+        <div>
+           <p>has options</p> 
+            <input type="checkbox" name="hasOptions">
         </div>
         
         {#if !isEnd}
             <div>
                 <p>has redirection </p>
-                <input type="checkbox" name="isEnd" bind:value={hasRedirection}>
+                <input type="checkbox" name="hasRedirection" bind:checked={hasRedirection}>
             </div>
+        {/if}
+        {hasRedirection}
+        {isEnd}
         {#if hasRedirection}
 
-            {#each options as option, i}
+            {#each redirections as redirection, i}
                 <div>
                     <p>redirection {i+1}</p>
                     <input type="text" name="redirection {i+1}">
@@ -59,11 +68,9 @@
         {/if}
 
         <div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </div>
     </div>
-
-
 </form>
 
 <style lang="scss">
