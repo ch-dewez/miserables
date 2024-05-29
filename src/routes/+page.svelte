@@ -1,14 +1,57 @@
 <script>
     import { goto } from "$app/navigation";
     import jsonData from "$lib/data.json"
+    import { onMount, tick } from "svelte"
 
     let questionNb = 0
     let path = 0
+    let showOptions = true
     
-    $: currentData = jsonData[questionNb][path] 
+   // @ts-ignore
+     $: currentData = jsonData[questionNb][path]
+
+    onMount(() => {
+        console.log(currentData);
+        typeIt(currentData.text, document.getElementById("text"))
+        if (currentData.hasOptions) {
+            typeIt(currentData.option1, document.getElementById("option1"))
+            typeIt(currentData.option2, document.getElementById("option2"))
+        }else {
+            typeIt(currentData.option1, document.getElementById("continue"))
+        }
+    })
+
+    function removeIt(target, callback) {
+        let hold = target.textContent.split('');
+        var step = 1;
+
+        var interval = setInterval(function() {
+            if(hold.length == 0) { clearInterval(interval); callback()};
+            hold.pop();
+            step += 1;
+
+            target.innerHTML = hold.join('');
+        }, 500/hold.length);
+    }
+
+    // @ts-ignore
+    async function typeIt(text, target) {
+        let hold = []
+        let step = 0
+
+        var interval = setInterval(function() {
+            if(hold.length == text.length) { clearInterval(interval) };
+            hold.push(text.slice(step - 1, step));
+            step += 1;
+
+            target.innerHTML = hold.join('');
+        }, 500/text.length);
+        
+    }
 
 
-    function onClick(answerIdx) {
+    // @ts-ignore
+    async function onClick(answerIdx) {
         if (currentData.isEnd) {
             goto("/end")
             return
@@ -17,7 +60,6 @@
         if (currentData.hasRedirection){
             questionNb = parseInt(currentData.redirections[0])
             path = parseInt(currentData.redirections[1])
-            return
         }else {
             path += answerIdx * (2 ** questionNb)
             questionNb += 1
@@ -26,7 +68,28 @@
         if (questionNb >= jsonData.length || !jsonData[questionNb]?.hasOwnProperty(path)) {
             goto(`add/${questionNb}/${path}`)
         }
-        initVariables()
+
+        await tick()
+        removeIt(document.querySelector('#text'), () => typeIt(currentData.text, document.querySelector('#text')))
+        if (showOptions && currentData.hasOptions) {
+            removeIt(document.querySelector('#option1'), () => typeIt(currentData.option1, document.querySelector('#option1')))
+            removeIt(document.querySelector('#option2'), () => typeIt(currentData.option2, document.querySelector('#option2')))
+        }else if(showOptions && !currentData.hasOptions) {
+            removeIt(document.querySelector("#option1"), () => {})
+            removeIt(document.querySelector("#option2"), async () => {
+                showOptions = false
+                await tick()
+                typeIt("continuer", document.querySelector("#continue"))
+            })
+        }else if (!showOptions && currentData.hasOptions) {
+            removeIt(document.querySelector("#continue"), async () => {
+                showOptions = true
+                await tick()
+                typeIt(currentData.option1, document.querySelector("#option1"))
+                typeIt(currentData.option2, document.querySelector("#option2"))
+            })
+        }
+        
     }
 </script>
 
@@ -34,16 +97,16 @@
 <img src="images/{currentData.image}" alt="Description of the image">
 <div class="container">
     <div class="speech">
-        <h5>{currentData.text}</h5>
+        <h5 id="text"></h5>
     </div>
-    {#if currentData.hasOptions}
+    {#if showOptions}
         <div class=answers>
-            <button class="underline" on:click={() => onClick(0)}>{currentData.option1}</button>
-            <button class="underline" on:click={() => onClick(1)}>{currentData.option2}</button>
+            <button class="underline" id="option1" on:click={() => onClick(0)}></button>
+            <button class="underline" id="option2" on:click={() => onClick(1)}></button>
         </div>
     {:else}
         <div class="answers">
-            <button class="underline" on:click={() => onClick(0)}>continuer</button>
+            <button class="underline" id="continue" on:click={() => onClick(0)}></button>
         </div>
     {/if}
 </div>

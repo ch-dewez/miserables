@@ -1,29 +1,16 @@
 [
   {
     "0": {
-      "text": "Premier texte",
+      "text": "Mais est-ce que je dois me dénoncer",
       "hasOptions": true,
-      "option1": "redirection",
-      "option2": "no Option",
+      "option1": "Pour l'innoncent",
+      "option2": "Non, moi d'abord",
       "image": "jeanvaljean.jpg"
     }
   },
   {
     "0": {
-      "text": "redirection",
-      "option1": "option 1",
-      "option2": "option2",
-      "image": "jeanvaljean.jpg",
-      "isEnd": null,
-      "hasOptions": null,
-      "hasRedirection": "on",
-      "redirections": [
-        "0",
-        "0"
-      ]
-    },
-    "1": {
-      "text": "no option",
+      "text": "Je suis devant les porte de l'audience",
       "option1": "",
       "option2": "",
       "image": "jeanvaljean.jpg",
@@ -34,11 +21,39 @@
         null,
         null
       ]
+    },
+    "1": {
+      "text": "Tu es avec cosette",
+      "option1": "",
+      "option2": "",
+      "image": "jeanvaljean.jpg",
+      "isEnd": true,
+      "hasOptions": null,
+      "hasRedirection": null,
+      "redirections": [
+        null,
+        null
+      ]
     }
   },
   {
-    "1": {
-      "text": "end",
+    "0": {
+      "text": "Est ce que j'entre",
+      "option1": "entrer",
+      "option2": "ne pas entrer",
+      "image": "jeanvaljean.jpg",
+      "isEnd": null,
+      "hasOptions": true,
+      "hasRedirection": null,
+      "redirections": [
+        null,
+        null
+      ]
+    }
+  },
+  {
+    "0": {
+      "text": "Je suis dans l'audience",
       "option1": "",
       "option2": "",
       "image": "jeanvaljean.jpg",
@@ -48,6 +63,19 @@
       "redirections": [
         null,
         null
+      ]
+    },
+    "4": {
+      "text": "J'aurais du",
+      "option1": "",
+      "option2": "",
+      "image": "jeanvaljean.jpg",
+      "isEnd": null,
+      "hasOptions": null,
+      "hasRedirection": "on",
+      "redirections": [
+        "1",
+        "1"
       ]
     }
   }
