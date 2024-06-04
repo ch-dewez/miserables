@@ -1,35 +1,19 @@
 [
   {
     "0": {
-<<<<<<< HEAD
-      "text": "Mais est-ce que je dois me dénoncer",
-      "hasOptions": true,
-      "option1": "Pour l'innoncent",
-      "option2": "Non, moi d'abord",
-=======
       "text": "Monsieur, excusez-moi, je pensais que vous étiez jean valjean, honte à moi.",
       "hasOptions": false,
->>>>>>> 67de0ed (update data.json)
       "image": "jeanvaljean.jpg"
     }
   },
   {
     "0": {
-<<<<<<< HEAD
-      "text": "Je suis devant les porte de l'audience",
-      "option1": "",
-      "option2": "",
-      "image": "jeanvaljean.jpg",
-      "isEnd": null,
-      "hasOptions": null,
-=======
       "text": "Mais pourtant c'est faux, une personne s'est dénoncer.",
       "option1": "Hahaha, c'est bonne !",
       "option2": "Vous êtes sur de vous?",
       "image": "jeanvaljean.jpg",
       "isEnd": null,
       "hasOptions": "on",
->>>>>>> 67de0ed (update data.json)
       "hasRedirection": null,
       "redirections": [
         null,
@@ -51,32 +35,10 @@
     }
   },
   {
-<<<<<<< HEAD
-    "0": {
-      "text": "Est ce que j'entre",
-      "option1": "entrer",
-      "option2": "ne pas entrer",
-      "image": "jeanvaljean.jpg",
-      "isEnd": null,
-      "hasOptions": true,
-      "hasRedirection": null,
-      "redirections": [
-        null,
-        null
-      ]
-    }
-  },
-  {
-    "0": {
-      "text": "Je suis dans l'audience",
-      "option1": "",
-      "option2": "",
-=======
     "2": {
       "text": "Oui pourquoi ? Une personne a reconnu jean valjean en prison.",
       "option1": "C'est faux ! Je suis jean valjean.",
       "option2": "Si quelqu'un la reconnu ...",
->>>>>>> 67de0ed (update data.json)
       "image": "jeanvaljean.jpg",
       "isEnd": null,
       "hasOptions": "on",
