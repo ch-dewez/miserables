@@ -10,14 +10,16 @@
    // @ts-ignore
      $: currentData = jsonData[questionNb][path]
 
-    onMount(() => {
+    onMount(async () => {
         console.log(currentData);
         typeIt(currentData.text, document.getElementById("text"))
         if (currentData.hasOptions) {
             typeIt(currentData.option1, document.getElementById("option1"))
             typeIt(currentData.option2, document.getElementById("option2"))
         }else {
-            typeIt(currentData.option1, document.getElementById("continue"))
+            showOptions = false
+            await tick()
+            typeIt("continuer", document.querySelector("#continue"))
         }
     })
 
@@ -52,10 +54,6 @@
 
     // @ts-ignore
     async function onClick(answerIdx) {
-        if (currentData.isEnd) {
-            goto("/end")
-            return
-        }
 
         if (currentData.hasRedirection){
             questionNb = parseInt(currentData.redirections[0])
@@ -67,6 +65,7 @@
 
         if (questionNb >= jsonData.length || !jsonData[questionNb]?.hasOwnProperty(path)) {
             goto(`add/${questionNb}/${path}`)
+            return
         }
 
         await tick()
@@ -95,8 +94,14 @@
 
 <!-- svelte-ignore a11y-img-redundant-alt -->
 <img src="images/{currentData.image}" alt="Description of the image">
+{#if currentData.isEnd}
+<div class="end">
+    <p>The End</p>
+</div>
+{:else}
 <div class="container">
     <div class="speech">
+        <!-- svelte-ignore a11y-missing-content -->
         <h5 id="text"></h5>
     </div>
     {#if showOptions}
@@ -110,7 +115,7 @@
         </div>
     {/if}
 </div>
-
+{/if}
 
 <style lang="scss">
 
@@ -121,6 +126,15 @@
     font-family: Roboto;
     font-weight: 400;
     font-style: normal;
+}
+
+.end{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color:white
 }
 
 img {
@@ -137,6 +151,7 @@ img {
     background: rgba($color: #000000, $alpha: 0.5);
     backdrop-filter: blur(5px);
     border-radius: 10px;
+    padding:10px;
     width: 80%;
     height: 20%;
     top: 80%;
@@ -159,6 +174,7 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         height: 50%;
         width: 100%;
     }
