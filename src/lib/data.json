@@ -1,16 +1,16 @@
 [
   {
     "0": {
-      "text": "Monsieur, excusez-moi, je pensais que vous étiez jean valjean, honte à moi.",
+      "text": "Monsieur, excusez-moi, je pensais que vous étiez Jean Valjean, honte à moi.",
       "hasOptions": false,
       "image": "cabinet.webp"
     }
   },
   {
     "0": {
-      "text": "Mais pourtant c'est faux, une personne s'est dénoncer.",
+      "text": "Mais pourtant c'est faux, une personne s'est dénoncé.",
       "option1": "Hahaha",
-      "option2": "Vous êtes sur de vous?",
+      "option2": "Vous êtes sûr de vous?",
       "image": "cabinet.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -36,9 +36,9 @@
       ]
     },
     "2": {
-      "text": "Oui pourquoi ? Une personne a reconnu jean valjean en prison.",
-      "option1": "C'est faux ! Je suis jean valjean.",
-      "option2": "Si quelqu'un la reconnu ...",
+      "text": "Oui pourquoi ? Une personne a reconnu Jean Valjean en prison.",
+      "option1": "C'est faux ! Je suis Jean Valjean.",
+      "option2": "Si quelqu'un l'a reconnu ...",
       "image": "cabinet.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -52,7 +52,7 @@
   {
     "0": {
       "text": "Il ne faut pas qu'un innocent se fasse arrêter. ",
-      "option1": "Mais comment je pourrai aider les autres en prisons.",
+      "option1": "Mais comment je pourrais aider les autres en prisons.",
       "option2": "Je dois me dénoncer",
       "image": "street2.webp",
       "isEnd": null,
@@ -64,7 +64,7 @@
       ]
     },
     "2": {
-      "text": "Comment c'est possible ? Je dois vous arrêter",
+      "text": "Comment c'est possible ? Je dois vous arrêter.",
       "option1": "se débattre",
       "option2": "se laisser faire",
       "image": "fight.webp",
@@ -77,7 +77,7 @@
       ]
     },
     "6": {
-      "text": "Je dois aider fantine",
+      "text": "Je dois aider fantine.",
       "option1": "",
       "option2": "",
       "image": "street.webp",
@@ -118,9 +118,9 @@
       ]
     },
     "8": {
-      "text": "C'est innaceptable il se prendra deux fois plus de temps en prison.",
+      "text": "C'est naceptable il se prendra deux fois plus de temps de prison.",
       "option1": "Après tout, c'est quand même un criminel !",
-      "option2": "C'est moi le criminel !",
+      "option2": "C'est moi qui devrais être emprisonner !",
       "image": "street3.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -159,7 +159,7 @@
       ]
     },
     "8": {
-      "text": "Je vais aller chercher Cosette chez les thénardiers.",
+      "text": "Je vais aller chercher Cosette chez les Thénardier.",
       "option1": "",
       "option2": "",
       "image": "street2.webp",
@@ -187,7 +187,7 @@
   },
   {
     "8": {
-      "text": "Je vais te ramenais à ta mère.",
+      "text": "Je vais te ramener à ta mère.",
       "option1": "",
       "option2": "",
       "image": "cosette.webp",
@@ -241,7 +241,7 @@
       ]
     },
     "24": {
-      "text": "Est-ce que vous me reconnaissais ?",
+      "text": "Est-ce que vous me reconnaissait ?",
       "option1": "",
       "option2": "",
       "image": "tribunal.webp",
@@ -284,7 +284,7 @@
   },
   {
     "24": {
-      "text": "Pourtant, moi je vous reconnais avec ton surnom Je-nie-Dieu.",
+      "text": "Pourtant, moi je vous reconnait avec ton surnom Je-nie-Dieu.",
       "option1": "",
       "option2": "",
       "image": "tribunal.webp",
@@ -385,7 +385,7 @@
       ]
     },
     "4120": {
-      "text": "ça devrait faire l'affaire ici.",
+      "text": "Ça devrait faire l'affaire ici.",
       "option1": "",
       "option2": "",
       "image": "caché.webp",
