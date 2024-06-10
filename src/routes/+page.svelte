@@ -6,6 +6,7 @@
     let questionNb = 0
     let path = 0
     let showOptions = true
+    let showText = true
     
    // @ts-ignore
      $: currentData = jsonData[questionNb][path]
@@ -38,6 +39,12 @@
 
     // @ts-ignore
     async function typeIt(text, target) {
+        if (text == "" && target == document.querySelector("#text")) {
+            target.parentElement.style.opacity = 0
+            return
+        }else {
+            target.parentElement.style.opacity = 1
+        }
         let hold = []
         let step = 0
 
@@ -93,28 +100,33 @@
 </script>
 
 <!-- svelte-ignore a11y-img-redundant-alt -->
-<img src="images/{currentData.image}" alt="Description of the image">
+<img src="images/{currentData.image}" alt="current image">
 {#if currentData.isEnd}
-<div class="end">
-    <p>The End</p>
-</div>
+    <div class="end">
+        <p>The End</p>
+    </div>
 {:else}
-<div class="container">
     <div class="speech">
-        <!-- svelte-ignore a11y-missing-content -->
-        <h5 id="text"></h5>
+            <!-- svelte-ignore a11y-missing-content -->
+            <h5 id="text"></h5>
     </div>
     {#if showOptions}
         <div class=answers>
+            <div class="background">
             <button class="underline" id="option1" on:click={() => onClick(0)}></button>
+            </div>
+            <div class="background">
             <button class="underline" id="option2" on:click={() => onClick(1)}></button>
+            </div>
         </div>
     {:else}
         <div class="answers">
+            <div class="background">
+
             <button class="underline" id="continue" on:click={() => onClick(0)}></button>
+            </div>
         </div>
     {/if}
-</div>
 {/if}
 
 <style lang="scss">
@@ -146,22 +158,16 @@ img {
     object-fit: cover;
 }
 
-.container {
+.answers {
     position:absolute;
-    background: rgba($color: #000000, $alpha: 0.5);
-    backdrop-filter: blur(5px);
     border-radius: 10px;
     padding:10px;
     width: 80%;
     height: 20%;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    h5 {
-        color: white;
-        font-size: 2rem; 
-    }
     
     button {
         background: none;
@@ -170,41 +176,63 @@ img {
         color: white;
     }
 
-    .speech {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 50%;
-        width: 100%;
-    }
-    .answers{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 50%;
-        width: 100%;
-
-        .underline {
-            display: inline-block;
-            position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 3px;
-                bottom: 0;
-                left: 0;
-                background-color: white;
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-            }
-            &:hover::after{
-                transform: scaleX(1);
-                transform-origin: bottom left;
-            }
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .background{
+        max-width: 50%;
+        border-radius: 10px;
+        padding: 15px;
+        background: rgba($color: #000000, $alpha: 0.5);
+        backdrop-filter: blur(5px);
+        margin-left: 20px;
+    
+    .underline {
+        display: inline-block;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        &:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
     }
+}
+    
+}
+.speech {
+
+    position:absolute;
+    border-radius: 10px;
+    padding:10px;
+    width: 80%;
+    height: 20%;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h5 {
+
+    border-radius: 10px;
+    padding: 15px;
+    background: rgba($color: #000000, $alpha: 0.5);
+    backdrop-filter: blur(5px);
+        color: white;
+        font-size: 2rem; 
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 </style>
