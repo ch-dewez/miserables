@@ -48,7 +48,7 @@
         }
         if (target.classList.contains("underline")){
             target.parentElement.style.opacity = 0
-            //await new Promise(resolve => setTimeout(resolve, 3000)) 
+            await new Promise(resolve => setTimeout(resolve, 3000)) 
             target.parentElement.style.opacity = 1
         }
         let hold = []
