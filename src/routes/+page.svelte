@@ -39,10 +39,16 @@
 
     // @ts-ignore
     async function typeIt(text, target) {
+         
         if (text == "" && target == document.querySelector("#text")) {
             target.parentElement.style.opacity = 0
             return
         }else {
+            target.parentElement.style.opacity = 1
+        }
+        if (target.classList.contains("underline")){
+            target.parentElement.style.opacity = 0
+            await new Promise(resolve => setTimeout(resolve, 3000)) 
             target.parentElement.style.opacity = 1
         }
         let hold = []
