@@ -1,7 +1,7 @@
 [
   {
     "0": {
-      "text": "Monsieur, excusez-moi, je vous ai soupçonné d'être un malfrat, d'être un certains Jean Valjean.",
+      "text": "Monsieur, excusez-moi, je vous ai soupçonné d'être un malfrat, d'être un certain Jean Valjean.",
       "hasOptions": false,
       "image": "cabinet.webp"
     }
@@ -9,8 +9,8 @@
   {
     "0": {
       "text": "Mais pourtant c'est faux, une personne a reconnu ce Jean Valjean.",
-      "option1": "Hahaha, comment avez-vous pu pensé cela ?",
-      "option2": "Vous êtes sûr de vous?",
+      "option1": "Hahaha, comment avez-vous pu penser cela ?",
+      "option2": "Êtes-vous sûr de vous?",
       "image": "cabinet.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -23,7 +23,7 @@
   },
   {
     "0": {
-      "text": "M. Madelaine est maintenant dehors. Il se questionne : \"Doit-il se dénoncer?\".",
+      "text": "M. Madeleine est maintenant dehors. Il se questionne : \"Doit-il se dénoncer?\".",
       "option1": "",
       "option2": "",
       "image": "street.webp",
@@ -36,8 +36,8 @@
       ]
     },
     "2": {
-      "text": "Oui pourquoi ? La personne qui l'a reconnu le fréquentais en prisons pendant des années.",
-      "option1": "C'est faux ! Je suis Jean Valjean.",
+      "text": "Oui pourquoi ? La personne qui l'a reconnu le fréquentait en prison.",
+      "option1": "Non, vous vous trompez ! Je suis Jean Valjean.",
       "option2": "Si quelqu'un l'a reconnu ...",
       "image": "cabinet.webp",
       "isEnd": null,
@@ -77,7 +77,7 @@
       ]
     },
     "6": {
-      "text": "Il m'a un peu fait peur. Ici à cette heure, je dois aider Fantine.",
+      "text": "Il m'a fait un peu peur, et ici à cette heure, je dois aider Fantine.",
       "option1": "",
       "option2": "",
       "image": "street.webp",
@@ -92,7 +92,7 @@
   },
   {
     "0": {
-      "text": "Si je je ne me dénonce pas alors je dois aider Fantine après tout je lui ai promis.",
+      "text": "Si je ne me dénonce pas alors je dois aider Fantine. Après tout je lui ai promis.",
       "option1": "",
       "option2": "",
       "image": "street.webp",
@@ -118,9 +118,9 @@
       ]
     },
     "8": {
-      "text": "C'est inacceptable il se prendra deux fois plus de temps de prison.",
-      "option1": "Pourquoi je devrais me dénoncer, après tout, c'est quand même un criminel, il mérite d'aller en prison !",
-      "option2": "Mais moi aussi je devrais être emprisonner !",
+      "text": "Si je ne me dénonce pas, il fera deux fois plus de temps de prison.",
+      "option1": "Pourquoi je devrais me dénoncer, après tout, c'est quand même un criminel. Il mérite d'aller en prison !",
+      "option2": "Mais moi aussi je devrais être emprisonné !",
       "image": "street3.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -146,7 +146,7 @@
   },
   {
     "2": {
-      "text": "Maintenant qu'ils savent qui je suis ...",
+      "text": "J'ai réussi à m'enfuir mais maintenant qu'ils savent qui je suis ...",
       "option1": "",
       "option2": "",
       "image": "street2.webp",
@@ -172,7 +172,7 @@
       ]
     },
     "24": {
-      "text": "M. Madelaine est devant les portes du tribunal.",
+      "text": "M. Madeleine est devant les portes du tribunal.",
       "option1": "Entrer",
       "option2": "Rester en dehors de tout ça",
       "image": "door.webp",
@@ -187,7 +187,7 @@
   },
   {
     "8": {
-      "text": "Je vais te ramener à ta mère, elle t'attends, elle se sent pas bien.",
+      "text": "Je vais te ramener à ta mère. Elle t'attend, elle ne se sent pas bien.",
       "option1": "",
       "option2": "",
       "image": "cosette.webp",
@@ -214,7 +214,7 @@
     },
     "56": {
       "option1": "",
-      "text": "Si je je ne me dénonce pas alors je dois aider Fantine après tout je lui ai promis.",
+      "text": "Si je ne me dénonce pas alors je dois aider Fantine. Après tout je lui ai promis.",
       "option2": "",
       "image": "street.webp",
       "isEnd": null,
@@ -241,7 +241,7 @@
       ]
     },
     "24": {
-      "text": "Il se m'est à interroger un des témoins : \"Est-ce que vous me reconnaissait ?\".",
+      "text": "Il interroge un des témoins : \"Est-ce que vous me reconnaissez ?\".",
       "option1": "",
       "option2": "",
       "image": "tribunal.webp",
@@ -254,7 +254,7 @@
       ]
     },
     "88": {
-      "text": "Si je je ne me dénonce pas alors je dois aider Fantine après tout je lui ai promis.",
+      "text": "Si je ne me dénonce pas alors je dois aider Fantine. Après tout je lui ai promis.",
       "option1": "",
       "option2": "",
       "image": "street.webp",
@@ -284,7 +284,7 @@
   },
   {
     "24": {
-      "text": "Pourtant, moi je vous reconnait tous, toi par exeple tu as toute ton épaule droite brulée.",
+      "text": "Pourtant, moi je vous reconnais tous. Toi par exemple tu as toute ton épaule droite brûlée.",
       "option1": "",
       "option2": "",
       "image": "tribunal.webp",
@@ -299,7 +299,7 @@
   },
   {
     "24": {
-      "text": "M. Madelaine serait donc Jean Valjean ?!",
+      "text": "M. Madeleine serait donc Jean Valjean ?!",
       "option1": "",
       "option2": "",
       "image": "judge.webp",
@@ -314,7 +314,7 @@
   },
   {
     "24": {
-      "text": "Je ne veux pas déranger l'audience plus que ça. Et puisque personne m'arrête je m'en vais. Mais maintenant qu'il savent qui je suis ...",
+      "text": "Je ne veux pas déranger l'audience plus que cela. Et puisque personne ne m'arrête je m'en vais. Mais maintenant qu'ils savent qui je suis ...",
       "option1": "",
       "option2": "",
       "image": "leaving.webp",
@@ -330,8 +330,8 @@
   {
     "24": {
       "text": "Devrais-je aller aider Fantine et Cosette ?",
-      "option1": "Je lui ais promis !",
-      "option2": "Mais je vais certainement me faire arrêter, Javert c'est que je vais y aller.",
+      "option1": "Je lui ai promis !",
+      "option2": "Mais je vais certainement me faire arrêter, Javert sait que je vais y aller.",
       "image": "street.webp",
       "isEnd": null,
       "hasOptions": "on",
@@ -357,7 +357,7 @@
       ]
     },
     "4120": {
-      "text": "Je devrais aller me cacher pour pas qu'il me retrouve.",
+      "text": "Je devrais aller me cacher afin qu'il ne me retrouve pas.",
       "option1": "",
       "option2": "",
       "image": "street3.webp",
